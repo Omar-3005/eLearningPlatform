@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/Home Page/Accordion style.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        /* background-color: #fff; */
+        font-size: 1.1em;
+        line-height: 1.5;
+        text-align: center;
+            }
+/* Nav Bar CSS beginning*/
+
+      .Navigation-Bar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15)
+      }
+      .logo {
+        width: 200px;
+        height: 80px;
+        padding: 1.5vw 7vw;
+        padding-top: 4px;
+      }
+        /* Turns the ul vertically instead of horizantally */
+      ul{
+       display: flex;
+       justify-content: flex-end;
+       align-items: center; 
+       list-style: none;
+       padding: 1vw 7vw;
+      }
+        /* This deals with the vertical spacing  of the li on the nav bar */
+       nav ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+        /* text-decoration: none; */
+      color: #000;
+      }
+      
+      /* This deals with the easeing in/out of the li underline */
+      nav ul li a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #BC3838;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+      }
+        /*  */
+      nav ul li a:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+      }
+      /* End:This deals with the easeing in/out of the li underline */
+
+      /* li a CSS adds spacing to the li and removes the underlining. Changes the color to black and other small formating */
+      li a{
+        margin-left: 80px; /* This changes the spacing between the li*/
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500px;
+        color: black;
+      }
+      li a:hover{
+        color: maroon; /* When hovering over a list element in the nav bar this highlight the element maroon */
+      }
+
+      /* Hamburger menu begins */
+      .toggle-button {
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+
+      }
+      .toggle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: black;
+        border-radius: 10px;
+
+      }
+
+      @media (max-width: 700px){
+        .toggle-button{
+          display: flex;
+
+        }
+        .navbar-links {
+          display: none;
+          width: 100%;
+        }
+      }
+      /* Hamburger menu ends */
+
+/* Nav Bar CSS End*/
+*{
+
+}
+.accordion {
+    background-color: #eee;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #BC3838;
+    padding: 20px;
+    border: 2px solid black;
+    margin-bottom: 50px;
+    object-position: center;
+    margin-left: 50%;
+  }
+  
+  .accordion p {
+    display: inline;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .accordion p{
+    text-align: justify;
+  }
+</style>
+</head>
+<body>
+    <div>
+     <nav class="Navigation-Bar">
+          <div>
+            <a href="#"><img class="logo" src="UOLOGO3.png"></a>
+          </div>
+          <a href="#" class="toggle-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </a>
+          <div class="navbar-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="login/register">Login/Register</a></li>
+            </ul>
+          </div> 
+       </nav>
+<p>
+  <span class="wysiwyg-font-size-large"><strong>This article will help you get where you need to go to replace your boater education card. It will be split up into two sections. States for which we do issue replacement cards and states in which the relevant state entity replaces the card.</strong></span>
+</p>
+<p>
+  <span class="wysiwyg-color-red wysiwyg-font-size-large">We suggest you do "Ctrl + F" on your computer keyboard and type your state so that you can locate it quicker.</span>
+</p>
+<p>
+  <span class="wysiwyg-underline"><strong><span class="wysiwyg-font-size-large">Section 1: States we replace the card for</span></strong></span>
+</p>
+<p>
+  <span class="wysiwyg-color-black wysiwyg-font-size-large">Alaska - Arizona - Arkansas - Canada - Colorado - District of Columbia - Georgia - Hawaii - Idaho - Illinois - Indiana - Iowa - Kansas - Kentucky - Maine - Maryland - Mississippi - Missouri - Montana - Nevada - New Hampshire - New Mexico - New York - North Carolina - North Dakota - Oklahoma - South Carolina - South Dakota - Tennessee (if born on or before 1/1/1989) - Virginia - West Virginia - Wyoming</span>
+</p>
+
+<div class="accordion">
+  <p>What is this website about?</p>
+</div>
+<div class="panel">
+  <p>
+    This website provides users with tools and courses to help them develop the neccessary skills to become a programmer
+  </p>
+</div>
+<div class="accordion">
+  <p>How does the subscription work?</p>
+</div>
+<div class="panel">
+  <p>
+    Simply select a course and confrim your enrollment. You will either be prompted to add a new method of payment or select the billing details already on your account.
+  </p>
+</div>
+<div class="accordion">
+  <p>What coding languages can I learn through courses that are offered on the website?</p>
+</div>
+<div class="panel">
+  <p>
+    To replace a lost or destroyed Boating Safety Education Certificate, you
+    can order a duplicate by calling 302-739-9915 or emailing&nbsp;<a href="mailto:brooke.mitchell@delaware.gov">brooke.mitchell@delaware.gov</a>.
+  </p>
+</div>
+<div class="accordion">
+  <p>Florida</p>
+</div>
+<div class="panel">
+  <p>
+    To replace a lost or destroyed Boating Safety Education I.D. Card, you can
+    order a duplicate by calling 850-488-5600 or emailing&nbsp;<a href="mailto:bobbercard@myfwc.com">bobbercard@myfwc.com</a>.
+  </p>
+</div>
+<div class="accordion">
+  <p>Louisiana</p>
+</div>
+<div class="panel">
+  <p>
+
+  </p>
+</div>
+<div class="accordion">
+  <p>Massachusetts</p>
+</div>
+<div class="panel">
+  <p>
+
+  </p>
+</div>
+<div class="accordion">
+  <p>Minnesota</p>
+</div>
+<div class="panel">
+  <p>
+
+  </p>
+</div>
+<div class="accordion">
+  <p>Nebraska</p>
+</div>
+<div class="panel">
+  <p>
+
+  </p>
+</div>
+<div class="accordion">
+  <p>New Jersey</p>
+</div>
+<div class="panel">
+  <p>
+
+  </p>
+</div>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .side-bar{
+            position: relative;
+            top: 0.5px;
+            left: 0;
+            width: 20rem;
+            background-color: white;
+            border-right: border;
+
+        }
+        .side-bar .profile{
+            padding:2rem;
+            text-align: center;
+        }
+        .side-bar .profile{
+            height: 10rem;
+            width: 10rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: .5rem;
+        }
+
+        .side-bar .profile h3{
+            font-size: 1.2rem;
+            color: black;
+        }
+        .side-bar .profile{
+            color: grey;
+            font-size: 1rem;
+        }
+        .side-bar .nav-bar{
+            margin-top: 1rem;
+
+        }
+        .side-bar .nav-bar{
+            display: block;
+            padding: 1.5rem;
+            margin:.5rem 0;
+            font-size: 1.8rem;
+
+        }
+
+        .side-bar .nav-bar a i{
+            color: var(--light-color);
+            margin-right: 1rem;
+        }
+        .side-bar .navbar a span{
+            color: whitesmoke;
+        }
+      nav {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        /* background-color: #fff; */
+        font-size: 1.1em;
+        line-height: 1.5;
+        text-align: center;
+            }
+/* "Retrieved from stackoverflow to fix a spill issue with our page: " */
+      html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+      }
+/* Nav Bar CSS beginning*/
+
+      .Navigation-Bar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15)
+      }
+      .logo {
+        width: 200px;
+        height: 80px;
+        padding: 1.5vw 7vw;
+        padding-top: 4px;
+      }
+        /* Turns the ul vertically instead of horizantally */
+      ul{
+       display: flex;
+       justify-content: flex-end;
+       align-items: center; 
+       list-style: none;
+       padding: 1vw 7vw;
+      position: relative;
+      }
+        /* This deals with the vertical spacing  of the li on the nav bar */
+       nav ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+
+      color: #000;
+      }
+      
+      /* This deals with the easeing in/out of the li underline */
+      nav ul li a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #BC3838;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+      }
+        /*  */
+      nav ul li a:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+      }
+      /* End:This deals with the easeing in/out of the li underline */
+
+      /* li a CSS adds spacing to the li and removes the underlining. Changes the color to black and other small formating */
+      li a{
+        margin-left: 80px; /* This changes the spacing between the li*/
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500px;
+        color: black;
+      }
+      li a:hover{
+        color: maroon; /* When hovering over a list element in the nav bar this highlight the element maroon */
+      }
+
+      /* Hamburger menu begins */
+      .toggle-button {
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+
+      }
+      .toggle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: black;
+        border-radius: 10px;
+
+      }
+
+      @media (max-width: 900px){
+        .toggle-button{
+          display: flex;
+
+        }
+        .navbar-links {
+          display: none;
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+      /* Hamburger menu ends */
+
+/* Nav Bar CSS End*/
+* { margin: 0; padding: 0; }
+    .watch-video{
+        width: 50%;
+        height: 50%;
+        display: flex;
+        padding-left: 25%;
+        margin-top: 2rem;
+    }
+    .watch-video .video-details{
+        background-color: whitesmoke;
+        padding: 2rem; 
+    }
+    .watch-video .video-details .video{
+        width: 100%;
+        border-radius: .5rem;
+        margin-bottom: 1rem;
+    }
+    .watch-video .video-details .title{
+        font-size: 2rem;
+        color: var(--black);
+        padding: 1.5rem 0;
+    }
+    .watch-video .video-details .info{
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1.5rem ;
+        border-bottom: var(--border);
+    }
+    .watch-video .video-details .info p{
+        font-size: 2rem;}
+    .watch-video .video-details .info p span{
+        color: var(--light-color);
+    }
+    .watch-video .video-details .tutor{
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    .watch-video .video-details .tutor img{
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+</style>
+</head>
+<body>
+    <div>
+     <nav class="Navigation-Bar">
+          <div>
+            <a href="../Home Page/Home Page.html"><img class="logo" src="/Home Page/UOLOGO3.png"></a>
+          </div>
+          <a href="#" class="toggle-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </a>
+          <div class="navbar-links">
+            <ul>
+                <li><a href="/Home Page/Home Page.html">Home</a></li>
+                <li><a href="../courses page/CoursePageV2.html">Courses</a>
+                <li><a href="../FAQ/FAQ Attempt 3.html">FAQ</a></li>
+                <li><a href="../Contact Page1/contactpage0.html">Contact</a></li>
+                <li><a href="../Register Page/login.html" id="login/register">Login/Register</a></li>
+            </ul>
+          </div> 
+       </nav>
+<!-- Sidebar -->
+ <div class="side-bar">
+    <div class="profile">
+        <!-- <img src="/Home Page/p1.jpg" alt=""> -->
+        <h3>Salim Moumouni</h3>
+        <span>Student</span>
+        <a href="/Account Setings Page/V4-Mod/Account.html" class="btn">Profile</a>
+    </div>
+    <div class="nav-bar">
+        <a href=""><span>homw</span></a>
+        <a href=""><span>Courses</span></a>
+        <a href=""><span>Requests</span></a>
+        <a href=""><span>Saved</span></a>
+    </div>
+ </div>
+<!-- Watching a video section -->
+<div class="watch-video">
+    <div class="video-details">
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" class="video"></iframe>
+        <h3 class="title">Intro to Calculus 1</h3>
+        <div class="info">
+            <p><span>Published: 21-23-2020</span></p>
+            <p><span>200,000 Views</span></p>
+        </div>
+        <div class="tutor">
+            <img src="/Home Page/p1.jpg" alt="">
+            <div>
+                <h3>John Doe</h3>
+            </div>
+        </div>
+        <form action="" method="post" class="flex">
+            <a href="" class="inline-btn"> view playlist</a>
+            <button type="submit"></button>
+        </form>
+        <div class="descriptions">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos? Ab, error. Distinctio minima, tempora maiores laudantium laborum, reiciendis consequatur qui voluptatum modi omnis adipisci ducimus soluta, ipsam tenetur deleniti pariatur fugiat? Doloremque, corrupti adipisci delectus suscipit quis ab ut.</p><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod incidunt excepturi dolorum labore est perspiciatis cumque cupiditate qui consequuntur! At ad beatae ipsam dolorum, debitis commodi pariatur iste molestias architecto assumenda rem error tenetur officia reiciendis facilis quaerat? Quidem, ducimus!</p>
+        </div>
+    </div>
+</div>
+<!-- watching a video section -->

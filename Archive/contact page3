@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+      <title>Contact</title>
+      <head>
+      <style>
+        #heading{text-align:center}
+        #heading2{text-align:center}
+        #heading3{text-align: center}
+    Form{
+        width:500px;
+        Padding: 20px;
+        Margin: Auto;
+        Background: maroon
+    }
+    input[type*submit]{
+        width:100%;
+        padding: 5px;
+        font-size : 17px;
+    }
+    input [type*submit] { 
+        Padding : 5px;
+        font-size : 18px ;
+    }
+    textarea{
+    background: white;
+    Width : 500px;
+    font-size : 20px;
+    margin :auto;
+    }
+
+  </style>
+  </head>
+
+<body>
+   <body bgcolor="silver"> </body>
+    <div class="wrap"
+    <div class=" logo"
+    <img src ="images/uoeducation.png" alt ="ggame"
+    </div>
+    <div class="welcome-text">
+    <h1 id="heading"> Contact Page</h1>
+    <p id="heading2"> Having technical issues with the site? Fill out the boxes below so we can help you out.</p>
+    <p id="heading3"> For faster assistcance, You may also contact the customer service number 
+ <a href="612-422-0010"><b>612-422-0010</b></a>
+     </p>
+
+</div>
+</body>
+
+<form>
+User Name*:<br>
+<input type ="text" name ="Uname"><br>
+Phone number*:<br>
+<input type ="text" name ="Pnumber"><br><br>
+<textarea name =message" rows="5 " cols ="20">Type your question </textarea>
+<br>
+<input type="submit"
+</form>
+ 
+</body>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/dbb41ba882.css" crossorigin="anonymous">
+    <style>
+      .Navigation-Bar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15)
+      }
+      .logo {
+        width: 200px;
+        height: 80px;
+        padding: 1.5vw 7vw;
+        padding-top: 4px;
+      }
+      /* Turns the ul vertically instead of horizantally */
+      ul{
+       display: flex;
+       justify-content: flex-end;
+       align-items: center; 
+       list-style: none;
+       padding: 1vw 7vw;
+      }
+      /* This deals with the vertical spacing  of the li on the nav bar */
+       nav ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+      /* text-decoration: none; */
+      color: #000;
+      }
+      /* This deals with the easeing in/out of the li underline */
+      nav ul li a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #BC3838;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+      }
+      /*  */
+      nav ul li a:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+      }
+      /* li a CSS adds spacing to the li and removes the underlining. Changes the color to black and other small formating */
+      li a{
+        margin-left: 80px; /* This changes the spacing between the li*/
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500px;
+        color: black;
+      }
+      li a:hover{
+        color: maroon; /* When hovering over a list element in the nav bar this highlight the element maroon */
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none; /* Automatically Hide the dropdown menu */
+        position: absolute;
+        background-color: #f9f9f9;
+        padding-left: 5px; /* Make the dropdown box smaller from the left */
+        padding-right: 5px; /*Make the dropdown box smaller from the right*/
+        min-width: 5px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        z-index: 1; /* Stacking order relative to the task bar */
+  
+      }
+      .toggle-button {
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+
+      }
+      .toggle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: black;
+        border-radius: 10px;
+
+      }
+
+      @media (max-width: 700px){
+        .toggle-button{
+          display: flex;
+
+        }
+
+        .navbar-links {
+          display: none;
+          width: 100%;
+        }
+      }
+      /* Use this to toggle dropdown menu back on */
+      .dropdown:hover .dropdown-content {
+        /* display: block; */
+      }
+      .MathArrow{
+        fill: currentColor;
+        display: inline-block;
+        flex-shrink: 0;
+        transform: rotate(-90deg);
+      }
+      .sub-dropdown {
+        position: relative;
+      }
+      .sub-dropdown-content {
+        display: none; /* Automatically Hide the sub dropdown menu */
+        position: absolute;
+        padding-left: 0px;
+        padding-right: 0px;
+        left: 103%; /* align the sub-menu with the right side of the "Math" li */
+        top: 30%; /* align the sub-dropdown with the top of the "Math" li */
+        background-color: #f9f9f9;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      .sub-dropdown:hover .sub-dropdown-content {
+        display: block; /* When you hover over "Math" show the sub menu */
+      }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        /* background-color: #fff; */
+        font-size: 1.1em;
+        line-height: 1.5;
+        text-align: center;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 500px;
+        display: flex;
+      }
+      h1{
+        margin: 0;
+        padding: 1em 0;
+        color: white;
+        font-size: 4em;
+      }
+      .paragraph1 {
+        margin: 0;
+        padding: 1em 0;
+        color: white;
+        font-size: 4em;
+      }
+      .btn {
+        background-color: #BC3838;
+        color: white;
+        text-decoration: none;
+        padding: 1em 2em;
+        border: 1px solid black;
+        padding: .5vw 2vw;
+        opacity: .9;
+        margin: 50px;
+      }
+      /* When hovering over the button background changes to white and letters to black. Used the :hover pseudo class */
+      .btn:hover{
+        background-color: white;
+        color: BLACK;
+      }
+      .First-Container {
+        min-height: 600px;
+        color: black;
+        text-align: center;
+      }
+      .First-Container1 .First-Container{
+        /* position: absolute; */
+        background: black url('https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?cs=srgb&dl=pexels-rafael-cosquiere-2041540.jpg&fm=jpg&_gl=1*vfg6wr*_ga*NDgxOTM1MTE4LjE2NzUwMjEyOTg.*_ga_8JE65Q40S6*MTY3NTA4MTM1Ni40LjEuMTY3NTA4MTM4NC4wLjAuMA..');
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 450px;
+        z-index: -1;
+        opacity: .9;
+      }
+      .paragraph1{
+        color: white;
+        font-size: 20px
+      }
+      .FirstContainer, h1{
+        padding-top: 200px;
+        padding-bottom: 0;
+      }
+      .About-Us{
+        background: var(--primary);
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 30px;
+        /* grid-template-columns: repeat(2, 1fr); */
+        padding: 6rem;
+        border: 1px black;
+      }
+      .paragraph2, .header2 {
+        margin: 100px;
+        padding-inline-start: 10;
+      }
+      /* .header2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 1in;
+        position: relative;
+    } */
+      .About-Us {
+          display: flex;
+          /* flex-direction: column;
+          align-items: center; */
+  }
+
+      .About-Us img {
+          width: 50%;
+          flex-direction: row;
+  }
+
+      .About-Us .header2 {
+        font-size: 36px;
+        margin-top: 1em;
+        width: 50%;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+      }
+
+      .header2:before {
+        content: "";
+        height: 10px;
+        width: 100%;
+        background-color: #BC3838;
+        position: absolute;
+        top: -20px;
+        left: 0;
+      }
+
+      .About-Us .paragraph2 {
+        margin-top: 1em;
+        font-size: 25px;
+        /* width: 50%; */
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", sans-serif;
+}
+.services{
+  background: #f1f1f1;
+  text-align: center;
+  background: url(https://images.pexels.com/photos/5239564/pexels-photo-5239564.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+}
+.services h6{
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 4px solid maroon;
+  font-size: 20px;
+  padding-bottom: 0px;
+  margin-top: 10px;
+}
+.cen{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+.service{
+  display: inline-block;
+  width calc(100% /3);
+  margin: 0 -2px;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.4s;
+  color: black;
+  font-weight: 700px;
+  background-color: white;
+  margin: 10px;
+}
+.service1{
+  display: inline-block;
+  width calc(100% /3);
+  margin: 0 -2px;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.4s;
+  color: black;
+  font-weight: 700px;
+  background-color: white;
+  margin: 10px;
+}
+.service2{
+  display: inline-block;
+  width calc(100% /3);
+  margin: 0 -2px;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.4s;
+  color: black;
+  font-weight: 700px;
+  background-color: white;
+  margin: 10px;
+}
+.service-hover{
+  background: #ddd;
+}
+.service i{
+  color: #3498db;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+.service h7{
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", sans-serif;
+}
+.testimonials{
+  padding: 40px 0;
+  background: #F1f1f1;
+  color: #a32323;
+  text-align: center;
+  /* background: url(https://images.pexels.com/photos/289737/pexels-photo-289737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) */
+}
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+.border{
+  width: 160px;
+  height: 5px;
+  background: black;
+  margin: 26px auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col{
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.testimonial{
+  background: #fff;
+  padding: 30px;
+}
+.testimonial img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: 100PX;
+}
+.name{
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.stars{
+  color: maroon;
+  margin-bottom: 20px;
+}
+h5{
+  font-size: 1.5rem;
+}
+/* Footer */
+.element {
+  all: none;
+}
+footer{
+  padding: 5vw;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+footer .footer-col{
+  padding-bottom: 40px;
+}
+footer h9{
+  color: white;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+footer li{
+  list-style: none;
+  color: grey;
+  padding: 10px 0;
+  font-size: 15px;
+  cursor:pointer
+}
+footer li{}
+</style>
+</head>
+<body>
+    <div>
+     <nav class="Navigation-Bar">
+          <div>
+            <a href="#"><img class="logo" src="UOLOGO3.png"></a>
+          </div>
+          <a href="#" class="toggle-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </a>
+          <div class="navbar-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="login/register">Login/Register</a></li>
+            </ul>
+          </div> 
+       </nav>
+       <!-- This will be for the first top section of the website below the nav bar -->
+       <section class="First-Container1">
+        <header class="First-Container">
+            <h1>Your Education Awaits!</h1>
+            <h3 class="paragraph1">Feed your mind with knowledge and expertise. Learn from trusted experts to elevate your education to the next level.</h3>
+            <a href="#" class="btn">Explore</a>
+        </header>
+       </section>       
+        <!-- This will be for the second top section of the website below the nav bar -->
+        <section class="About-Us">
+            <img src="pexels-olia-danilevich-5088008.jpg">
+            <div class="about">
+                <h2 class="header2">Who are we?</h2>
+                <p class="paragraph2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quasi eveniet magni labore voluptatem, quis quas pariatur enim aperiam reiciendis!</p>
+            </div>
+        </section>
+        <section class="services">
+          <h6>Our Services</h6>
+          <div class="cen">
+            <div class="service">
+              <i class="fas fa-anchor"></i>
+              <h7>Math</h7>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, accusamus, labore aliquam eum vero mollitia similique voluptas nulla minus temporibus maiores. Praesentium totam, amet ducimus quos esse rerum saepe quidem incidunt accusamus provident! Nemo nobis iusto iste, eveniet provident earum.</p>
+            </div>
+            <div class="service1">
+              <i class="fas fa-anchor"></i>
+              <h7>English</h7>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, accusamus, labore aliquam eum vero mollitia similique voluptas nulla minus temporibus maiores. Praesentium totam, amet ducimus quos esse rerum saepe quidem incidunt accusamus provident! Nemo nobis iusto iste, eveniet provident earum.</p>
+            </div>
+            <div class="service2">
+              <i class="fas fa-anchor"></i>
+              <h7>Codinge</h7>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, accusamus, labore aliquam eum vero mollitia similique voluptas nulla minus temporibus maiores. Praesentium totam, amet ducimus quos esse rerum saepe quidem incidunt accusamus provident! Nemo nobis iusto iste, eveniet provident earum.</p>
+            </div>
+          </div>
+
+        </section>
+        <section class="testimonials">
+          <div class="inner">
+            <h5>Testimonials</h5>
+            <div class="border"></div>
+            <div class="row">
+              <div class="col">
+                <div class="testimonial">
+                  <img src="p1.jpg" alt="">
+                  <div class="name">John Smith</div>
+                  <div class="stars">
+                    <i class="fa-light fa-star"></i>
+                    <i class="fa-light fa-star"></i>
+                    <i class="fa-light fa-star"></i>
+                    <i class="fa-light fa-star"></i>
+                    <i class="fa-light fa-star"></i>
+                  </div>
+                    <p> 
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore reiciendis vel a ipsam cum unde nihil commodi perferendis est qui!
+                    </p>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="testimonial">
+                  <img src="p1.jpg" alt="">
+                  <div class="name">John Smith</div>
+                  <div class="stars">
+                  <i class="fa-light fa-star"></i>
+                  <i class="fa-light fa-star"></i>
+                  <i class="fa-light fa-star"></i>
+                  <i class="fa-light fa-star"></i>
+                  <i class="fa-light fa-star"></i>
+                  </div>
+                    <p> 
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore reiciendis vel a ipsam cum unde nihil commodi perferendis est qui!
+                    </p>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="testimonial">
+                  <img src="p1.jpg" alt="">
+                  <div class="name">John Smith</div>
+                  <div class="stars">
+                  <i class="fa-light fa-star"></i>
+                  <i class="fa-light fa-star"></i>
+                  <i class="fa-light fa-star"></i>
+                  <i class="fa-light fa-star"></i>
+                  <i class="fa-light fa-star"></i>
+                  </div>
+
+                    <p> 
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore reiciendis vel a ipsam cum unde nihil commodi perferendis est qui!
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          <footer>
+            <div class="footer-col">
+              <h9>Our Products</h9>
+              <li>Math</li>
+              <li>Enligh</li>
+              <li>Coding</li>
+              <li>Knitting</li>
+            </div>
+            <div>
+              <h9>Our Products</h9>
+              <li>Math</li>
+              <li>Enligh</li>
+              <li>Coding</li>
+              <li>Knitting</li>
+            </div>
+            <div>
+              <h9>Our Products</h9>
+              <li>Math</li>
+              <li>Enligh</li>
+              <li>Coding</li>
+              <li>Knitting</li>
+            </div>
+            <div>
+              <h9>Our Products</h9>
+              <li>Math</li>
+              <li>Enligh</li>
+              <li>Coding</li>
+              <li>Knitting</li>
+            </div>
+            <div>
+              <h9>Our Products</h9>
+              <li>Math</li>
+              <li>Enligh</li>
+              <li>Coding</li>
+              <li>Knitting</li>
+            </div>
+          </footer>
+    </div>
+</body>
+

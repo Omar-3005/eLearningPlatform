@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+ <html>
+       <title>Contact</title>
+       <head>
+          <style>
+         #heading{text-align:center}
+         #heading2{text-align:center}
+         #heading3{text-align: center}
+     Form{
+         width:75%;
+         Padding: 20px;
+         Margin: Auto;
+         Background: rgba(164, 25, 25, 0.922);
+         height: 50%;
+
+     }
+     .subj {
+        font-size: 18px;
+        color: white;
+     }
+     .Full {
+        font-size: 18px;
+        color: white;
+     }
+     .Email {
+        font-size: 18px;
+        color: white;
+    }
+     
+     .phone {
+            font-size: 18px;
+            color: white
+
+     }
+     .description {
+        font-size: 18px;
+        color: white ;
+     }
+     input[type="text"]{
+        width : 45%
+     }
+     input[type*submit]{
+         width:100%;
+         padding: 5px;
+         font-size : 17px;
+     }
+     input [type*submit] { 
+         Padding : 5px;
+         font-size : 18px ;
+     }
+     textarea{
+     background: white;
+     Width : 75%;
+     font-size : 20px;
+     margin :auto;
+     }
+     body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+            }
+/* "Retrieved from stackoverflow to fix a spill issue with our page: " */
+      html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+      }
+/* Nav Bar CSS beginning*/
+
+      .Navigation-Bar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15)
+      }
+      .logo {
+        width: 200px;
+        height: 80px;
+        padding: 1.5vw 7vw;
+        padding-top: 4px;
+      }
+        /* Turns the ul vertically instead of horizantally */
+      ul{
+       display: flex;
+       justify-content: flex-end;
+       align-items: center; 
+       list-style: none;
+       padding: 1vw 7vw;
+      }
+        /* This deals with the vertical spacing  of the li on the nav bar */
+       nav ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+        /* text-decoration: none; */
+      color: #000;
+      }
+      
+      /* This deals with the easeing in/out of the li underline */
+      nav ul li a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #BC3838;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+      }
+        /*  */
+      nav ul li a:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+      }
+      /* End:This deals with the easeing in/out of the li underline */
+
+      /* li a CSS adds spacing to the li and removes the underlining. Changes the color to black and other small formating */
+      li a{
+        margin-left: 80px; /* This changes the spacing between the li*/
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500px;
+        color: black;
+      }
+      li a:hover{
+        color: maroon; /* When hovering over a list element in the nav bar this highlight the element maroon */
+      }
+
+      /* Hamburger menu begins */
+      .toggle-button {
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+
+      }
+      .toggle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: black;
+        border-radius: 10px;
+
+      }
+
+      @media (max-width: 700px){
+        .toggle-button{
+          display: flex;
+
+        }
+        .navbar-links {
+          display: none;
+          width: 100%;
+        }
+      }
+      /* Hamburger menu ends */
+
+/* Nav Bar CSS End*/
+footer{
+        padding: 5vw;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding-top: ;
+        margin-top: 40px;
+      }
+      footer .footer-col{
+        padding-bottom: 40px;
+      }
+      footer h9{
+        color: white;
+        font-weight: 600;
+        padding-bottom: 20px;
+      }
+      footer li{
+        list-style: none;
+        color: grey;
+        padding: 10px 0;
+        font-size: 15px;
+        cursor:pointer
+      }
+   </style>
+   </head>
+
+ <body>
+    <div>
+        <nav class="Navigation-Bar">
+             <div>
+               <a href="../Home Page/UOLOGO3.png"><img class="logo" src="../Home Page/UOLOGO3.png"></a>
+             </div>
+             <a href="#" class="toggle-button">
+               <div class="bar"></div>
+               <div class="bar"></div>
+               <div class="bar"></div>
+             </a>
+             <div class="navbar-links">
+               <ul>
+                   <li><a href="../Home Page/Home Page.html">Home</a></li>
+                   <li><a href="../courses page/CoursePageV2.html">Courses</a>
+                   <li><a href="../FAQ/FAQ Attempt 3.html">FAQ</a></li>
+                   <li><a href="../Contact Page1/contactpage0.html">Contact</a></li>
+                   <li><a href="../Register Page/login.html" id="login/register">Login/Register</a></li>
+               </ul>
+             </div> 
+          </nav>
+
+     <div class="welcome-text">
+     <h1 id="heading"> Contact Page</h1>
+     <p id="heading2"> Having technical issues with the site? Fill out the boxes below so we can help you out.</p>
+     <p id="heading3"> For faster assistance, you may also contact the customer service number 
+  <a href="612-422-0010"><b>612-422-0010</b></a>
+      </p>
+
+ </div>
+ </body>
+
+ <form class="contact-form">
+ <p class="subj">What can we help you with:</p>
+ <input type ="text" name ="subj" style="width:25%; padding-bottom: 0.3%;" placeholder="Title of question/problem"><br>
+ <p class="Full">Full Name:</p>
+ <input type ="text" name ="Uname" style="width:25%; padding-bottom: 0.3%;" placeholder="Example: John Adam"><br>
+ <p class="Email">Email:</p>
+ <input type ="text" name ="Email" style="width:25%;padding-bottom:0.3% ;" placeholder="Example: John123@gmail.com"><br>
+ <p class="phone">Phone Number:</p>
+ <input type ="text" name ="Pnumber" style="width:25%;padding-bottom: 0.3%;" placeholder="Example: (819) 123-4567"><br><br>
+ <p class="description">Insert the description of your question/problem:</p> 
+ <textarea name = "message" rows="5 " cols ="20" placeholder="Write a summary of what we can help you with"></textarea>
+ <div>
+  <input class= "submit" type="submit">
+ </div>
+ </form>
+ <section class="footer">
+  <footer>
+    <div class="footer-col">
+      <h9>Our Products</h9>
+      <li>Math</li>
+      <li>Enligh</li>
+      <li>Coding</li>
+      <li>Knitting</li>
+    </div>
+    <div>
+      <h9>Customer Support</h9>
+      <li>We provide support from 9:00 a.m. to midnight EST, seven days a week.</li>
+      <h9>Phone</h9>
+      <li>1-800-800-8000</li>
+    </div>
+    <div>
+      <h9>Acces a course</h9>
+      <li>Click here to login!</li>
+      <li>Click here to register!</li>
+    </div>
+  </footer>
+</section>
+
+ </body>
+ </html>
+

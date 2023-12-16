@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="modal.js" defer></script>
+    <style>
+      .Navigation-Bar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15)
+      }
+      .logo {
+        width: 200px;
+        height: 80px;
+        padding: 1.5vw 7vw;
+        padding-top: 4px;
+      }
+      /* Turns the ul vertically instead of horizantally */
+      ul{
+       display: flex;
+       justify-content: flex-end;
+       align-items: center; 
+       list-style: none;
+       padding: 1vw 7vw;
+      }
+      /* This deals with the vertical spacing  of the li on the nav bar */
+       nav ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+      /* text-decoration: none; */
+      color: #000;
+      }
+      /* This deals with the easeing in/out of the li underline */
+      nav ul li a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #BC3838;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+      }
+      /*  */
+      nav ul li a:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+      }
+      /* li a CSS adds spacing to the li and removes the underlining. Changes the color to black and other small formating */
+      li a{
+        margin-left: 80px; /* This changes the spacing between the li*/
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500px;
+        color: black;
+      }
+      li a:hover{
+        color: maroon; /* When hovering over a list element in the nav bar this highlight the element maroon */
+      }
+      
+
+      .toggle-button {
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+
+      }
+      .toggle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: black;
+        border-radius: 10px;
+
+      }
+
+      @media (max-width: 700px){
+        .toggle-button{
+          display: flex;
+
+        }
+
+        .navbar-links {
+          display: none;
+          width: 100%;
+        }
+      }
+      
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        /* background-color: #fff; */
+        font-size: 1.1em;
+        line-height: 1.5;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 500px;
+        display: flex;
+      }
+      h1{
+        margin: 0;
+        padding: 1em 0;
+        color: white;
+        font-size: 4em;
+      }
+      .paragraph1 {
+        margin: 0;
+        padding: 1em 0;
+        color: white;
+        font-size: 4em;
+      }
+      .btn {
+        background-color: #BC3838;
+        color: white;
+        text-decoration: none;
+        padding: 1em 2em;
+        border: 1px solid black;
+        padding: .5vw 2vw;
+        opacity: .9;
+        margin: 50px;
+      }
+      /* When hovering over the button background changes to white and letters to black. Used the :hover pseudo class */
+      .btn:hover{
+        background-color: white;
+        color: BLACK;
+      }
+      .Top-Container .Landing-page{
+        /* position: absolute; */
+        background: black; 
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 350px;
+        z-index: -1;
+        opacity: .9;
+      }
+      .Header-Landing {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 700px;
+        padding: 3rem;  
+        text-align: left;   
+      }
+      .paragraph1{
+        color: white;
+        font-size: 20px;
+        text
+      }
+      .FirstContainer, h1{
+        padding-top: 200px;
+        padding-bottom: 0;
+     
+}
+.box .Bottom-container{
+    display: flex;
+}
+.LD {
+   display:block;
+   float:left;
+   width:300px; /* adjust */
+   height:150px; /* adjust */
+   padding: 5px; /*adjust*/
+   text-decoration: ;
+}
+.Bottom-container{
+    margin-left: auto; margin-right: auto
+}
+
+    
+
+    </style>
+</head>
+<body>
+    <div>
+     <nav class="Navigation-Bar">
+          <div>
+            <a href="#"><img class="logo" src="/Home Page/UOLOGO3.png"></a>
+          </div>
+          <a href="#" class="toggle-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </a>
+          <div class="navbar-links">
+            <ul>
+                <li><a href="/Home Page/Home Page.html">Home</a></li>
+                <li><a href="#">Courses</a>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="login/register">Login/Register</a></li>
+            </ul>
+          </div> 
+       </nav>
+       <!-- This will be for the first top section of the website below the nav bar -->
+       <section class="Top-Container">
+        <div class="Landing-page">
+            <h1 class="Header-Landing">Python for beginners: Learn The Basics Of Python</h1>
+            <div>
+                <h3 class="paragraph1">Feed your mind with knowledge and expertise. Learn from trusted experts to elevate your education to the next level.</h3>  
+            </div>
+            <div>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+        </div>
+       </section>
+       <section class="Bottom-Container">
+        <div class="Description">
+            <h2><strong>Description</strong></h2>
+        </div>
+        <div class="box">
+            <p>
+                <strong>
+                    Do you want to become a programmer? Do you want to learn how to create games, automate your browser, visualize data, and much more? 
+                </strong>
+            </p>
+            <p>
+                If you’re looking to learn Python for the very first time or need a quick brush-up, this is the course for you!
+            </p>
+            <p>
+                Python has rapidly become one of the most popular programming languages around the world. Compared to other languages such as Java or C++, Python consistently outranks and outperforms these languages in demand from businesses and job availability. The average Python developer makes over $100,000 - this number is only going to grow in the coming years.
+            </p>  
+            The best part? Python is one of the easiest coding languages to learn right now. It doesn’t matter if you have no programming experience or are unfamiliar with the syntax of Python. By the time you finish this course, you'll be an absolute pro at programming!
+            </p>
+                around the world. Compared to other languages such as Java or C++, Python consistently outranks and outperforms these languages in demand from businesses and job availability. The average Python developer makes  
+            </p> 
+            <p>
+                This course will cover <strong>all the basics</strong> and <strong>several advanced concepts</strong> of Python. We’ll go over:
+            </p>
+            <ul class="LD">
+                <li><p>The fundamentals of Python programming</p></li>
+                <li><p>Writing and Reading to Files</p></li>
+                <li><p>Automation of Word and Excel Files</p></li>
+                <li><p>Web scraping with BeautifulSoup4</p></li>
+                <li><p>Browser automation with Selenium</p></li>
+                <li><p>Data Analysis and Visualization with MatPlotLib</p></li>
+                <li><p>Regex parsing and Task Management</p></li>
+                <li><p>GUI and Gaming with Tkinter</p></li>
+                <li><p>And much more!</p></li>
+            </ul>
+        </div>
+
+       </section>    

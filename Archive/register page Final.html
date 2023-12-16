@@ -1,0 +1,281 @@
+<html>
+<head>
+    <title>Create Account</title>
+   <style>
+  body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        /* background-color: #fff; */
+        font-size: 1.1em;
+        line-height: 1.5;
+            }
+    /* "Retrieved from stackoverflow to fix a spill issue with our page: " */
+    html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+      }
+/* Nav Bar CSS beginning*/
+
+      .Navigation-Bar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15)
+      }
+      .logo {
+        width: 200px;
+        height: 80px;
+        padding: 1.5vw 7vw;
+        padding-top: 4px;
+      }
+        /* Turns the ul vertically instead of horizantally */
+      ul{
+       display: flex;
+       justify-content: flex-end;
+       align-items: center; 
+       list-style: none;
+       padding: 1vw 7vw;
+      }
+        /* This deals with the vertical spacing  of the li on the nav bar */
+       nav ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+        /* text-decoration: none; */
+      color: #000;
+      }
+      
+      /* This deals with the easeing in/out of the li underline */
+      nav ul li a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #BC3838;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+      }
+        /*  */
+      nav ul li a:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+      }
+      /* End:This deals with the easeing in/out of the li underline */
+
+      /* li a CSS adds spacing to the li and removes the underlining. Changes the color to black and other small formating */
+      li a{
+        margin-left: 80px; /* This changes the spacing between the li*/
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500px;
+        color: black;
+      }
+      li a:hover{
+        color: maroon; /* When hovering over a list element in the nav bar this highlight the element maroon */
+      }
+
+      /* Hamburger menu begins */
+      .toggle-button {
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+
+      }
+      .toggle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: black;
+        border-radius: 10px;
+
+      }
+
+      @media (max-width: 700px){
+        .toggle-button{
+          display: flex;
+
+        }
+        .navbar-links {
+          display: none;
+          width: 100%;
+        }
+      }
+      /* Hamburger menu ends */
+
+/* Nav Bar CSS End*/
+  body {
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff 50%, #BC3838 50%);
+    }
+
+
+    input{
+        width: 35%;
+        margin: 1%;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .form1{
+        margin-left: 7%;
+        margin-top: 1%;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .submit
+    {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+        background-color: #BC3838;
+        border: none;
+
+    }
+
+    .heading1{
+        font-size: 45px;
+        position:relative;
+        left: 11%;
+        top: 12%;
+        color:#BC3838;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+    .yesaccount{
+        color: white;
+       position:relative;
+       left: 69%;
+       top: 20%;
+        font-size: 45px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .subtext2{
+        position: relative;
+        left: 62%;
+        top: 24%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 19px;
+        color: white;
+    }
+
+    .loginbutton{
+        position:relative;
+        left: 65%;
+        top: 29%;
+    }
+
+    .fulllogo{
+        position: relative;
+        top: 0%;
+        left: 13%;
+    }
+
+    .halflogo{
+        position: relative;
+        top: 24%;
+        left: 48%;
+        height: 150px;
+        width: 150px;
+    }
+    footer{
+        padding: 5vw;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 500px;
+      }
+      footer .footer-col{
+        padding-bottom: 40px;
+      }
+      footer h9{
+        color: white;
+        font-weight: 600;
+        padding-bottom: 20px;
+      }
+      footer li{
+        list-style: none;
+        color: grey;
+        padding: 10px 0;
+        font-size: 15px;
+        cursor:pointer
+      }
+   </style>
+
+</head>
+<body>
+    <nav class="Navigation-Bar">
+        <div>
+          <a href="../Home Page/Home Page.html"><img class="logo" src="../Home Page/UOLOGO3.png"></a>
+        </div>
+        <a href="#" class="toggle-button">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </a>
+        <div class="navbar-links">
+          <ul>
+              <li><a href="../Home Page/Home Page.html">Home</a></li>
+              <li><a href="../courses page/CoursePageV2.html">Courses</a>
+              <li><a href="../FAQ/FAQ Attempt 3.html">FAQ</a></li>
+              <li><a href="../Contact Page1/contactpage0.html">Contact</a></li>
+              <li><a href="../Register Page/login.html" id="login/register">Login/Register</a></li>
+          </ul>
+        </div> 
+     </nav>
+    <img class= "halflogo" src="Picture1.png"/>
+ 
+<div class="heading1">Create Account</div>
+<div class="yesaccount">Log In</div>
+<div class="subtext2">Already have an account? Log in here!</div>
+<a href="login.html" class="loginbutton"><button style="background-color: white; padding: 10px; font-size: 15px; font-family:Arial, Helvetica, sans-serif; width: 20%;">Log in to your account</button></a>
+  
+<form class="form1">
+    <input type="text" name="fullname" placeholder="Full Name"> <br />
+    <input type="email" name="email" placeholder="Email"> <br />
+     <input type="text" name="region" placeholder="Region"> <br />
+    <input type="password" name="password" placeholder="Password"> <br />
+    <input class="submit" type="submit">
+</form>
+<section class="footer">
+    <footer>
+      <div class="footer-col">
+        <h9>Our Products</h9>
+        <li>Math</li>
+        <li>Enligh</li>
+        <li>Coding</li>
+        <li>Knitting</li>
+      </div>
+      <div>
+        <h9>Customer Support</h9>
+        <li>We provide support from 9:00 a.m. to midnight EST, seven days a week.</li>
+        <h9>Phone</h9>
+        <li>1-800-800-8000</li>
+      </div>
+      <div>
+        <h9>Acces a course</h9>
+        <li>Click here to login!</li>
+        <li>Click here to register!</li>
+        <li>Forgot your password?</li>
+      </div>
+    </footer>
+  </section>
+
+
+</body>
+
+</html>

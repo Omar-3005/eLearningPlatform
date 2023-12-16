@@ -1,0 +1,46 @@
+*{margin:0;padding:0;box-sizing: border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+.UserLogo{
+    width:50px;
+    border-radius: 100%;
+    border:solid 3px black;
+}
+.MainNavbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #5f2426;
+    padding:.4rem .8rem;
+}
+
+.MainNavbar .Topbar .Companylogo{color: white;}
+.user_bar {
+    display:flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.user_bar p{color: white;}
+.bold{font-weight: 890;}
+.MainNavbar ul li {height: 50px;width: 90%;list-style: none;}
+.MainNavbar a{color: white;flex: auto;align-items: center;}
+.MainNavbar ul li a:hover{
+    background-color: #fff;
+    color:#12171e;
+}
+.MainNavbar ul li a {text-decoration: none;}
+
+.main{margin-left: 250px;}
+section{
+    height: 100vh;
+    padding: 3px;
+    right: 700px;
+
+
+}
+section h1{text-align: center;}
+
+#Section1 table{
+    border-spacing: 30px;padding-top: 100px;
+  }
+#Section1 th, td, input{font-size: 20px;}

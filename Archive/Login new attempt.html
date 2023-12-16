@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+   <style>
+      body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.1em;
+      line-height: 1.5;
+      }
+
+      .container2 {
+      min-height: 100vh;
+      background: linear-gradient(90deg, #ffffff 50%, #BC3838 50%);
+      }
+
+  /* "Retrieved from stackoverflow to fix a spill issue with our page: " */
+      html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+      }
+/* Nav Bar CSS beginning*/
+
+      .Navigation-Bar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15)
+      }
+      .logo {
+        width: 200px;
+        height: 80px;
+        padding: 1.5vw 7vw;
+        padding-top: 4px;
+      }
+        /* Turns the ul vertically instead of horizantally */
+      ul{
+       display: flex;
+       justify-content: flex-end;
+       align-items: center; 
+       list-style: none;
+       padding: 1vw 7vw;
+      }
+        /* This deals with the vertical spacing  of the li on the nav bar */
+       nav ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+        /* text-decoration: none; */
+      color: #000;
+      }
+      
+      /* This deals with the easeing in/out of the li underline */
+      nav ul li a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #BC3838;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+      }
+        /*  */
+      nav ul li a:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+      }
+      /* End:This deals with the easeing in/out of the li underline */
+
+      /* li a CSS adds spacing to the li and removes the underlining. Changes the color to black and other small formating */
+      li a{
+        margin-left: 80px; /* This changes the spacing between the li*/
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500px;
+        color: black;
+      }
+      li a:hover{
+        color: maroon; /* When hovering over a list element in the nav bar this highlight the element maroon */
+      }
+
+      /* Hamburger menu begins */
+      .toggle-button {
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+
+      }
+      .toggle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: black;
+        border-radius: 10px;
+
+      }
+
+      @media (max-width: 700px){
+        .toggle-button{
+          display: flex;
+
+        }
+        .navbar-links {
+          display: none;
+          width: 100%;
+        }
+      }
+      /* Hamburger menu ends */
+
+/* Nav Bar CSS End*/
+  /* body {
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff 50%, #BC3838 50%);
+    
+    }
+     */
+    form {
+    height: 460px;
+    width: 600px;
+    
+    transform: translate(-50%, -50%);
+    margin: 145px 0px;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    /* box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); */
+    padding: 50px 35px;
+    }
+    form * {
+    font-family: "Inter", sans-serif;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    }
+    form h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    }
+
+    label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    }
+    input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 5px;
+    padding: 0 15px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    }
+    ::placeholder {
+    color: rgb(200, 200, 200);
+    }
+    button {
+    margin-top: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    form{
+        background: #BC3838;
+    }
+    .Forgot{
+        font-size: 15px;
+        padding-top: 10px;
+    }
+    .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 400px;
+  margin-top: 100px;
+}
+
+    
+
+    .halflogo {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 10.3px;
+    width: 100px;
+}
+    footer{
+        padding: 5vw;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 0px;
+      }
+      footer .footer-elements{
+        padding-bottom: 40px;
+      }
+      footer h9{
+        color: white;
+        font-weight: 600;
+        padding-bottom: 20px;
+      }
+      footer li{
+        list-style: none;
+        color: grey;
+        padding: 10px 0;
+        font-size: 15px;
+        cursor:pointer
+      }
+      .main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  
+}
+
+.login-container {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.register {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+   </style>
+
+</head>
+<body>
+    <div class="container2">
+        <nav class="Navigation-Bar">
+          <div>
+              <a href="../Home Page/Home Page.html"><img class="logo" src="../Home Page/UOLOGO3.png"></a>
+          </div>
+          <a href="#" class="toggle-button">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+          </a>
+          <div class="navbar-links">
+             <ul>
+                <li><a href="../Home Page/Home Page.html">Home</a></li>
+                <li><a href="../courses page/CoursePageV2.html">Courses</a>
+                <li><a href="../FAQ/FAQ Attempt 3.html">FAQ</a></li>
+                <li><a href="../Contact Page1/contactpage0.html">Contact</a></li>
+                <li><a href="../Register Page/login.html" id="login/register">Login/Register</a></li>
+             </ul>
+          </div> 
+       </nav>
+     <main class="forms">
+            <img class= "halflogo" src="Picture1.png"/>
+            <div class="login-container">
+                <form class="Login">
+                    <h3>Login</h3>
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Email or Phone" id="username" />
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password" id="password" />
+                    <div class="Forgot"><a href="../Register Page/forgotpassword.html">Forgot your password?</a></div>
+                    <button>Log In</button>
+                </form>
+           </div>
+           <div class="Register">
+                    <h2 class="register-header">Register</h2>
+                    <p class="register-text">Don't have an account? Register here!</p>
+                    <a href="../Register Page/register page Final.html" class="registerbutton"><button style="background-color: white; padding: 10px; font-size: 15px; font-family:Arial, Helvetica, sans-serif; width: 20%;">Register an account</button></a>
+           </div>
+     </main>
+</div>
+<section class="footer">
+    <footer>
+      <div class="footer-elements">
+        <h9>Our Products</h9>
+        <li>Math</li>
+        <li>Enligh</li>
+        <li>Coding</li>
+        <li>Knitting</li>
+      </div>
+      <div>
+        <h9>Customer Support</h9>
+        <li>We provide support from 9:00 a.m. to midnight EST, seven days a week.</li>
+        <h9>Phone</h9>
+        <li>1-800-800-8000</li>
+      </div>
+      <div>
+        <h9>Acces a course</h9>
+        <li>Click here to login!</li>
+        <li>Click here to register!</li>
+        <li>Forgot your password?</li>
+      </div>
+    </footer>
+  </section>
+
+
+</body>
+
+</html>

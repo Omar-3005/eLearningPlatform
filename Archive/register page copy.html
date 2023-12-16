@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Create Account</title>
+    <script src="https://kit.fontawesome.com/dbb41ba882.js" crossorigin="anonymous"></script>
+   <style>
+  
+  .contact-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(33.33% - 20px);
+  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #3b3b3b;
+}
+
+.contact-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.contact-info {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #666;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-box {
+    width: calc(50% - 20px);
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-box {
+    width: calc(100% - 20px);
+    height: 200px;
+  }
+}
+   </style>
+
+</head>
+<body>
+
+    <div class="contact-container">
+        <div class="contact-box">
+          <i class="fas fa-map-marker-alt contact-icon"></i>
+          <h2 class="contact-title">Our Main Office</h2>
+          <p class="contact-info">123 Main Street, Anytown USA</p>
+        </div>
+        
+        <div class="contact-box">
+          <i class="fas fa-phone-alt contact-icon"></i>
+          <h2 class="contact-title">Phone Number</h2>
+          <p class="contact-info">555-555-1234</p>
+        </div>
+        
+        <div class="contact-box">
+          <i class="fas fa-envelope contact-icon"></i>
+          <h2 class="contact-title">Email</h2>
+          <p class="contact-info">info@example.com</p>
+        </div>
+      </div>
+
+
+</body>
+
+</html>
+
