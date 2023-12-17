@@ -1,0 +1,245 @@
+
+.buttons {
+  display:flex; 
+  flex-wrap: wrap;
+  margin: 0%;
+  align-items: center;
+  transform: scale(1,1);
+}
+
+
+.buttons input[type="radio"] { 
+  display: none;
+}
+
+.buttons label {
+  font-weight: bold;
+  width: 10%; 
+  padding-right: 1vw;
+  padding-left: 1vw;
+  text-align: center;
+  justify-content: space-between;
+
+  }
+
+.buttons label:hover {
+  text-decoration: underline; 
+  cursor: pointer;
+}
+
+
+/* .buttons .selected {
+  order: 1;
+  display: none;
+} */
+
+.buttons input[type="radio"]:checked + label + .selected {display: block;}
+
+/* Edit P */
+.buttons .selected {
+  /* order: 1; */
+  display: none;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.buttons > label {
+  display: block;
+  margin: 10px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons > input[type="radio"]:checked + label {
+  background-color: maroon;
+  color: #fff;
+}
+
+
+.buttons .selected .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.buttons .selected .column img {
+  max-width: 100%;
+  border: 2px solid rgb(41, 39, 39);
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .buttons .selected {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+.buttons .selected {
+  order: 1;
+  display: none;
+  width: 80%; /* Added this line */
+  margin-left: 9px; /* Added this line */
+  
+}
+/* End of p */
+
+/* Might be useless */
+table {
+  font-size: medium;
+  font-family:'Lucida Sans Unicode';
+  width: 100%;
+}
+
+th {
+  border: 2px solid black; 
+  object-fit: fill;
+  width: 25%;
+}
+
+td {
+  border: 3px solid rgb(254, 254, 254);
+  text-align: center;
+  width: 25%;
+}
+/* Might be useless end */
+
+.alpha {width: 33%;}
+
+ .beta {width:33%;
+  text-align: center;} 
+  
+.all_courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  list-style-type:none;
+  padding-right: 10px;
+  padding-left: 10px;
+  align-items: center;
+}
+
+hr {
+   width: 100%;
+   border: solid 2px #c97793;
+  }
+
+.one {width: 100%;
+  border: solid 1px #cbcbcb}
+.column {
+  float: left;
+  width: 23%;
+  padding: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .column {
+    width: 33%;
+  }
+}
+
+.picture:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+p {font-family: Arial, Helvetica, sans-serif;}
+
+
+/* Styling for the price and buy button */
+
+
+.beta button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 10px; /* Added this line to create space between price and button */
+}
+
+
+h2{
+  padding-left: 20px;
+}
+
+.cart-container {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 500px;
+  margin-left: 65%;
+  margin-top: -300px;
+
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-header h2 {
+  margin: 0;
+}
+
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-item img {
+  width: 90px;
+  height: 90px;
+  margin-right: 10px;
+}
+
+.cart-item-details h3 {
+  margin: 0;
+}
+
+.cart-item-details p {
+  margin: 5px 0;
+}
+
+.cart-item-remove-btn {
+  font-size: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.cart-footer p {
+  margin: 0;
+}
